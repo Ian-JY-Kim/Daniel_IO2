@@ -4,7 +4,7 @@ from pandas import DataFrame as df
 import random
 import math
 
-
+# Main DGP
 def DGP(alpha, beta, delta, mu, sigma, market_number):
     # generate base data
     market_id_list = []
@@ -76,8 +76,7 @@ def DGP(alpha, beta, delta, mu, sigma, market_number):
 
     return master_data
 
-
-
+# Give higher probability to two firm cases only for some experiments
 def DGP2(alpha, beta, delta, mu, sigma, market_number):
     # generate base data
     market_id_list = []
@@ -94,7 +93,7 @@ def DGP2(alpha, beta, delta, mu, sigma, market_number):
 
         #potential number of entrants is randomly chosen among [2,3,4]
         potential_entrant = random.choices(population = [2,3,4],
-                                        weights = [5/4, 1/10, 1/10],
+                                        weights = [4/5, 1/10, 1/10],
                                         k = 1)[0]
 
         #dupicate market level data for #(potential number of entrants) times                                        
